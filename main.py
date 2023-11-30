@@ -2,11 +2,6 @@ import dotenv
 from gpt_utils import openai_reply
 from memory_repository import summary
 
-
-# 进度
-# Short-Term Memory实现了
-# Summary 实现了
-# 现在需要实现forget和Long-Term Memory
 def memoryrepository_talk(summary_and_forgetting_frequence):
     res = ""
     round = 1
