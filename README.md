@@ -1,3 +1,3 @@
 # MemoryRepository_ChatGPT
-MemoryRepository
-记忆数据库代码
+To be written by Typora later
+Write paper now!

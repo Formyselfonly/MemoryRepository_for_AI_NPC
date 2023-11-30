@@ -23,11 +23,13 @@ def memoryrepository_talk(summary_and_forgetting_frequence):
         short_term_memory.append(user_input+res)
         # print("------short_term_memory------", short_term_memory)
         short_term_memory_str=str(short_term_memory)
-
+        # Change to summary short term memory to 5 for production environment
+        #  Change to summary long term memory to 15(3x5) for production environment
         if round%summary_and_forgetting_frequence==0:
-            long_term_memory_str = summary(short_term_memory_str)
+            long_term_memory_str = long_term_memory_str+summary(short_term_memory_str)
             short_term_memory_str=""
-
+        if round % (summary_and_forgetting_frequence*3) == 0:
+            long_term_memory_str = summary(long_term_memory_str)
         print("------long_term_memory_str------",long_term_memory_str)
         print("------res------",res)
         round=round+1

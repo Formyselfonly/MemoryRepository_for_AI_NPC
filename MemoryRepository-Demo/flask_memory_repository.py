@@ -37,10 +37,13 @@ def talk():
     res = openai_reply(prompt)
     short_term_memory.append(user_input + res)
     short_term_memory_str = str(short_term_memory)
-    # Change to 5 for production environment
+    # Change to summary short term memory to 5 for production environment
+    # # Change to summary long term memory to 15 for production environment
     if round % 2 == 0:
-        long_term_memory_str = summary(short_term_memory_str)
+        long_term_memory_str = long_term_memory_str + summary(short_term_memory_str)
         short_term_memory_str = ""
+    if round % 4==0:
+        long_term_memory_str=summary(long_term_memory_str)
     print("------long_term_memory_str------", long_term_memory_str)
     print("------res------", res)
     round = round + 1
