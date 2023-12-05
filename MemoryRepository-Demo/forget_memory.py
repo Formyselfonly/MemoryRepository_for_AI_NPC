@@ -9,22 +9,7 @@ LLM_HISTORY_LEN = 3
 import math
 
 def forgetting_curve(t, S):
-    """
-    Calculate the retention of information at time t based on the forgetting curve.
-
-    :param t: Time elapsed since the information was learned (in days).
-    :type t: float
-    :param S: Strength of the memory.
-    :type S: float
-    :return: Retention of information at time t.
-    :rtype: float
-    Memory strength is a concept used in memory models to represent the durability or stability of a memory trace in the brain. 
-    In the context of the forgetting curve, memory strength (denoted as 'S') is a parameter that 
-    influences the rate at which information is forgotten. 
-    The higher the memory strength, the slower the rate of forgetting, 
-    and the longer the information is retained.
-    """
-    return math.exp(-t / 5*S)
+    return math.exp(-t / 6*S)
 
     # # Example usage
     # t = 1  # Time elapsed since the information was learned (in days)
@@ -40,7 +25,6 @@ class MemoryForgetterLoader(UnstructuredFileLoader):
         self.memory_level = 3
         self.total_date = 30
         self.language = language
-        
         self.memory_bank = {}
         
    
