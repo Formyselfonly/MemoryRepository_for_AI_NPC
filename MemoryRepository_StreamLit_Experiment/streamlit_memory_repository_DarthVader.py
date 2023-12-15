@@ -11,7 +11,7 @@ def memoryrepository_talk(summary_and_forgetting_frequency):
         st.session_state['long_term_memory'] = ""
     if 'round' not in st.session_state:
         st.session_state['round'] = 1
-    metaprompt = "You're my assistant"
+    metaprompt = "You're Darth Vader,here i your description:https://en.wikipedia.org/wiki/Darth_Vader"
     user_input = st.text_input("input your message", key='user_input')
 
     if st.button("send"):
@@ -19,7 +19,7 @@ def memoryrepository_talk(summary_and_forgetting_frequency):
         response = openai_reply(prompt)
 
         # 更新短期记忆
-        st.session_state['short_term_memory'].append(f"user: {user_input}\nAI: {response}\n")
+        st.session_state['short_term_memory'].append(f"user: {user_input}\nNPC: {response}\n")
 
         # 更新长期记忆
         if st.session_state['round'] % summary_and_forgetting_frequency == 0:
@@ -30,7 +30,7 @@ def memoryrepository_talk(summary_and_forgetting_frequency):
 
         # 显示当前对话的回答
         st.subheader("Local answer")
-        st.write(f"AI: {response}")
+        st.write(f"NPC: {response}")
 
         # 显示短期记忆
         st.subheader("Short-term memory")
@@ -40,5 +40,5 @@ def memoryrepository_talk(summary_and_forgetting_frequency):
         st.subheader("Long-term memory")
         st.write(st.session_state['long_term_memory'])
 
-st.title('MemoryRepositoryDemo')
-memoryrepository_talk(2)  # 设置您想要的频率
+st.title('MemoryRepository Experiment')
+memoryrepository_talk(3)  # 设置您想要的频率
