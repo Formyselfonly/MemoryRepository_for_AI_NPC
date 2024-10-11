@@ -1,6 +1,6 @@
 # Paper
 
-![](https://ieeexplore.ieee.org/document/10508558)
+[MemoryRepository for AI NPC](https://ieeexplore.ieee.org/document/10508558)
 
 # MemoryRepository for AI NPC
 
