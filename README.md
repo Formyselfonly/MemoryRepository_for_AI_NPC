@@ -4,6 +4,8 @@
 
 # 2.Guide for read-MemoryRepository for AI NPC
 
+This guide describes the content of each chapter.
+
 ## Architecture of MemoryRepository
 
 - Introduces the structure of the MemoryRepository,which include three part:Memory Room, Memory Interaction, and Memory Renewal Mechanism.
