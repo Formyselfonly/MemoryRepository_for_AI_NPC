@@ -39,7 +39,7 @@ def openai_reply_embedding(input):
 
 def openai_fine_tuning(file_json):
     openai.files.create(
-        # file=open("mydata.jsonl", "rb"),
+        # file=open("test.jsonl", "rb"),
         file=open(file_json, "rb"),
         purpose="fine-tune"
     )

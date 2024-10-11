@@ -20,6 +20,8 @@ def memoryrepository_talk(summary_and_forgetting_frequency):
 
         # 更新短期记忆
         st.session_state['short_term_memory'].append(f"user: {user_input}\nNPC: {response}\n")
+        st.session_state['talk_history'].append(f"user: {user_input}\n NPC: {response}\n","----------")
+
 
         # 更新长期记忆
         if st.session_state['round'] % summary_and_forgetting_frequency == 0:
@@ -33,12 +35,10 @@ def memoryrepository_talk(summary_and_forgetting_frequency):
         st.write(f"NPC: {response}")
 
         # 显示短期记忆
-        st.subheader("Short-term memory")
-        st.write("".join(st.session_state['short_term_memory']))
+        st.subheader("Talk History")
+        st.write("".join(st.session_state['talk_history']))
 
-        # 显示长期记忆
-        st.subheader("Long-term memory")
-        st.write(st.session_state['long_term_memory'])
+
 
 st.title('MemoryRepository Experiment')
 memoryrepository_talk(3)  # 设置您想要的频率

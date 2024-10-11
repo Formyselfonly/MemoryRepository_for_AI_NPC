@@ -23,7 +23,7 @@ def auto_configure_device_map(num_gpus: int) -> Dict[str, int]:
     # 在调用chat或者stream_chat时,input_ids会被放到model.device上
     # 如果transformer.word_embeddings.device和model.device不同,则会导致RuntimeError
     # 因此这里将transformer.word_embeddings,transformer.final_layernorm,lm_head都放到第一张卡上
-    # 本文件来源于https://github.com/THUDM/ChatGLM-6B/blob/main/utils.py
+    # 本文件来源于https://github.com/THUDM/ChatGLM-6B/blob/main/utils_for_fine-tuning.py
     # 仅此处做少许修改以支持ChatGLM3
     device_map = {
         'transformer.embedding.word_embeddings': 0,

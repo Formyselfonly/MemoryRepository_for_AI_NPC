@@ -8,21 +8,20 @@ openai=OpenAI(
     api_key=OPENAI_API_KEY
 )
 
-def npc_reply(prompt):
-    completions=openai.chat.completions.create(
-        model="gpt-3.5-turbo-16k",
-        messages=[
-            {"role":"system","content":"You're NPC"},
-            {"role":"user","content":prompt}
-        ]
-    )
-    return completions.choices[0].message.content
-
 def openai_reply(prompt):
     completions=openai.chat.completions.create(
         model="gpt-3.5-turbo-16k",
         messages=[
             {"role":"system","content":"You're my assistant"},
+            {"role":"user","content":prompt}
+        ]
+    )
+    return completions.choices[0].message.content
+def npc_reply(prompt):
+    completions=openai.chat.completions.create(
+        model="gpt-3.5-turbo-16k",
+        messages=[
+            {"role":"system","content":"You're NPC"},
             {"role":"user","content":prompt}
         ]
     )
