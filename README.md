@@ -1,8 +1,8 @@
+# 0.Demo
+[Demo for The Little Price](https://github.com/Formyselfonly/memoryrepository)
 # 1.Paper
-
 [MemoryRepository for AI NPC](https://ieeexplore.ieee.org/document/10508558)
 
-[Demo for The Little Price](https://github.com/Formyselfonly/memoryrepository)
 # 2.Guide for read-MemoryRepository for AI NPC
 
 This guide describes the content of each chapter.
